@@ -3,34 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: #F0F0F0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminDashboardController">
    <children>
-      <MenuBar>
-         <menus>
-            <Menu mnemonicParsing="false" text="File">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Data">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#showRegisteredUsers" text="Lihat Pengguna Terdaftar" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#showSystemInfo" text="Tentang Sistem" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
       
       <Label fx:id="welcomeLabel" text="Selamat Datang di Sistem Informasi XYZ">
          <font>
@@ -38,7 +16,7 @@
          </font>
       </Label>
       
-      <Label text="Dashboard Administrator" style="-fx-text-fill: #666;">
+      <Label style="-fx-text-fill: #666;" text="Dashboard Administrator">
          <font>
             <Font size="16.0" />
          </font>
@@ -46,7 +24,7 @@
       
       <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
          <children>
-            <Label text="Menu Utama" style="-fx-font-weight: bold; -fx-font-size: 18;">
+            <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="Menu Utama">
                <font>
                   <Font size="18.0" />
                </font>
@@ -67,7 +45,7 @@
          </children>
       </VBox>
       
-      <Label text="© 2025 Sistem Informasi XYZ" style="-fx-text-fill: #999; -fx-font-size: 12;">
+      <Label style="-fx-text-fill: #999; -fx-font-size: 12;" text="© 2025 Sistem Informasi XYZ">
          <font>
             <Font size="12.0" />
          </font>

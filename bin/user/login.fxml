@@ -35,9 +35,9 @@
         </rowConstraints>
          <children>
             <Label style="-fx-font-weight: bold;" text="Username :" />
-            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="200.0" text="Masukan Username" GridPane.columnIndex="1" />
+            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="200.0" promptText="Masukan Username" GridPane.columnIndex="1" />
             <Label style="-fx-font-weight: bold;" text="Password :" GridPane.rowIndex="1" />
-            <PasswordField fx:id="passwordField" prefWidth="200.0" text="Masukan Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" prefWidth="200.0" promptText="Masukan Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
