@@ -32,7 +32,7 @@ public class AdminDashboardController {
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/login.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/logout.fxml"));
                 Parent root =  loader.load();
 
                 Stage stage = (Stage) welcomeLabel.getScene().getWindow();
@@ -76,7 +76,15 @@ public class AdminDashboardController {
     }
 
     public void showSystemInfo(){
-        String systemInfo = "Sistem Informasi XYZ\n\n" + "Version :  1.0" + "Developer: Iqbal" + "Tahun : 2025\n\n" + "Fitur:\n" +  "- Login/Registrasi User\n" + "- Dashboard Admin\n" + "- Manajemen Data Pengguna\n" + "- Sistem Secure";
+        String systemInfo = "Sistem Informasi XYZ\n\n" + 
+                        "Version: 1.0\n" + 
+                        "Developer: Iqbal\n" + 
+                        "Tahun: 2025\n\n" + 
+                        "Fitur:\n" +  
+                        "- Login/Registrasi User\n" + 
+                        "- Dashboard Admin\n" + 
+                        "- Manajemen Data Pengguna\n" + 
+                        "- Sistem Secure";
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Informasi Sistem");
@@ -87,7 +95,7 @@ public class AdminDashboardController {
 
     private void redirectToLogin(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("user/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) welcomeLabel.getScene().getWindow();

@@ -48,6 +48,7 @@ public class LoginController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
+        // Validasi input kosong
         if (username.isEmpty() || username.equals("Masukan Username")){
             showAlert("Error", "Username belum diisi", Alert.AlertType.ERROR);
             return;
@@ -58,12 +59,27 @@ public class LoginController {
             return;
         }
 
+        // Cek kredensial admin
         if (username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASSWORD)){
-            showAlert("Success", "Login Berhasil Selamat Datang Admin", Alert.AlertType.INFORMATION);
+            showAlert("Success", "Login Berhasil! Selamat Datang Admin", Alert.AlertType.INFORMATION);
             loadAdminDashboard();
-        } else {
-            showAlert("Succes", "Login Berhasik Selamat Datang" + username, Alert.AlertType.INFORMATION);
-            loadUserDashboard();
+            return;
+        }
+
+        // Cek kredensial user yang sudah terdaftar
+        boolean userDitemukan = false;
+        for (RegisterController.User user : RegisterController.getRegisteredUsers()) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                userDitemukan = true;
+                showAlert("Success", "Login Berhasil! Selamat Datang " + user.getFullName(), Alert.AlertType.INFORMATION);
+                loadUserDashboard();
+                break;
+            }
+        }
+
+        // Jika user tidak ditemukan
+        if (!userDitemukan) {
+            showAlert("Error", "Username atau Password salah!", Alert.AlertType.ERROR);
         }
     }
 

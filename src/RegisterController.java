@@ -101,7 +101,7 @@ public class RegisterController {
         User newUser = new User(username, password, fullName, nim);
         registeredUsers.add(newUser);
 
-        showAlert("Success", "Registrasi Berhasil" + fullName + "!",Alert.AlertType.INFORMATION);
+        showAlert("Success", "Registrasi Berhasil! Selamat datang " + fullName + "!", Alert.AlertType.INFORMATION);
 
         clearForm();
 

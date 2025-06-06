@@ -67,7 +67,7 @@
          </children>
       </VBox>
       
-      <Label text="© 2024 Sistem Informasi XYZ" style="-fx-text-fill: #999; -fx-font-size: 12;">
+      <Label text="© 2025 Sistem Informasi XYZ" style="-fx-text-fill: #999; -fx-font-size: 12;">
          <font>
             <Font size="12.0" />
          </font>
