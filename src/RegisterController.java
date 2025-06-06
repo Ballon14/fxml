@@ -111,12 +111,12 @@ public class RegisterController {
     @FXML
     private void handleBackToLogin(ActionEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("user/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Login - Sistem Inforamsi XYZ");
+            stage.setTitle("Login - Sistem Informasi XYZ");
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Error", "Gagal kembali ke halaman login", Alert.AlertType.ERROR);
@@ -144,5 +144,9 @@ public class RegisterController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public static List<User> getRegisteredUsers() {
+        return registeredUsers;
     }
 }

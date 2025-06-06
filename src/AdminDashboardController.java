@@ -19,7 +19,7 @@ public class AdminDashboardController {
     private Label welcomeLabel;
 
     @FXML
-    private void intialize(){
+    private void initialize(){
         System.out.println("Admin Dashboard loaded");
     }
 
@@ -32,7 +32,7 @@ public class AdminDashboardController {
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("admin/login.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/login.fxml"));
                 Parent root =  loader.load();
 
                 Stage stage = (Stage) welcomeLabel.getScene().getWindow();
@@ -62,8 +62,8 @@ public class AdminDashboardController {
             userList.append("Belum ada pengguna yang terdaftar.");
         } else {
             int count = 1;
-            for (RegisterController.User user : RegisterController.getRegisterdUsers()){
-                userList.append(count).append(". ").append("Username: ").append(user.getUsername()).append("\n  Nama: ").append(user.getNim()).append("\n\n");
+            for (RegisterController.User user : RegisterController.getRegisteredUsers()){
+                userList.append(count).append(". ").append("Username: ").append(user.getUsername()).append("\n  Nama: ").append(user.getFullName()).append("\n  NIM: ").append(user.getNim()).append("\n\n");
                 count++;
             }
         }

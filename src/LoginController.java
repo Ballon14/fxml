@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    private TextField usernamField;
+    private TextField usernameField;
 
     @FXML
     private PasswordField passwordField;
@@ -25,14 +25,14 @@ public class LoginController {
     @FXML
     private Button registerButton;
 
-    private final String username = "admin";
-    private final String password = "admin123";
+    private final String ADMIN_USERNAME = "admin";
+    private final String ADMIN_PASSWORD = "admin123";
 
     @FXML
-    private void intialize() {
-        usernamField.setOnMouseClicked(e -> {
-            if (usernamField.getText().equals("Masukan Username")){
-                usernamField.clear();
+    private void initialize() {
+        usernameField.setOnMouseClicked(e -> {
+            if (usernameField.getText().equals("Masukan Username")){
+                usernameField.clear();
             }
         });
 
@@ -45,7 +45,7 @@ public class LoginController {
 
     @FXML
     private void handleLogin(ActionEvent event){
-        String username = usernamField.getText().trim();
+        String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
         if (username.isEmpty() || username.equals("Masukan Username")){
